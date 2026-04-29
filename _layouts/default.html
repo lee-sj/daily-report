@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      color: #222;
+      background: #f8f9fa;
+      line-height: 1.7;
+    }
+    header {
+      background: #1a1a2e;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header .site-title { color: white; text-decoration: none; font-weight: 700; font-size: 1.05rem; }
+    nav a { color: #adb5bd; text-decoration: none; margin-left: 1.5rem; font-size: 0.9rem; }
+    nav a:hover { color: white; }
+    main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem; }
+    footer { text-align: center; color: #868e96; font-size: 0.85rem; padding: 2rem; margin-top: 3rem; border-top: 1px solid #dee2e6; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="{{ site.baseurl }}/" class="site-title">{{ site.title }}</a>
+    <nav>
+      <a href="{{ site.baseurl }}/">전체 목록</a>
+    </nav>
+  </header>
+  <main>
+    {{ content }}
+  </main>
+  <footer>
+    © {{ 'now' | date: "%Y" }} 채용공고 일일 리포트
+  </footer>
+</body>
+</html>

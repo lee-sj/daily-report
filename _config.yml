@@ -1,0 +1,28 @@
+title: "채용공고 일일 리포트"
+description: "K-디지털 트레이닝 AI 캠퍼스 선정 기관 채용공고 일일 분석"
+baseurl: "/daily-report"
+url: "https://lee-sj.github.io"
+lang: ko
+
+collections:
+  reports:
+    output: true
+    permalink: /reports/:name/
+    sort_by: date
+
+defaults:
+  - scope:
+      path: "_reports"
+      type: reports
+    values:
+      layout: report
+
+markdown: kramdown
+kramdown:
+  input: GFM
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - .github
+  - vendor

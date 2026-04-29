@@ -1,0 +1,31 @@
+---
+layout: default
+---
+<style>
+  .report-content h2 { font-size: 1.2rem; margin: 2rem 0 0.75rem; color: #1a1a2e; padding-bottom: 0.4rem; border-bottom: 1px solid #e9ecef; }
+  .report-content h3 { font-size: 1rem; margin: 1.5rem 0 0.5rem; color: #343a40; }
+  .report-content p { margin-bottom: 0.75rem; }
+  .report-content ul, .report-content ol { margin: 0.5rem 0 0.75rem 1.5rem; }
+  .report-content li { margin-bottom: 0.3rem; }
+  .report-content blockquote { background: #f1f3f5; border-left: 4px solid #4dabf7; padding: 0.75rem 1rem; margin: 1rem 0; border-radius: 0 4px 4px 0; }
+  .report-content hr { border: none; border-top: 1px solid #dee2e6; margin: 1.5rem 0; }
+  .report-content strong { color: #1a1a2e; }
+  .report-content a { color: #1971c2; }
+</style>
+
+<article>
+  <div style="margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 2px solid #e9ecef;">
+    <p style="color: #868e96; font-size: 0.85rem; margin-bottom: 0.4rem;">
+      {{ page.date | date: "%Y년 %m월 %d일" }}
+    </p>
+    <h1 style="font-size: 1.5rem; line-height: 1.4; font-weight: 700;">{{ page.title }}</h1>
+  </div>
+
+  <div class="report-content">
+    {{ content }}
+  </div>
+
+  <div style="margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #e9ecef;">
+    <a href="{{ site.baseurl }}/" style="color: #495057; text-decoration: none; font-size: 0.9rem;">← 전체 목록으로</a>
+  </div>
+</article>

@@ -1,0 +1,22 @@
+---
+layout: default
+title: "전체 리포트 목록"
+---
+<div>
+  <h1 style="font-size: 1.4rem; margin-bottom: 0.4rem;">채용공고 일일 리포트</h1>
+  <p style="color: #868e96; margin-bottom: 2rem; font-size: 0.95rem;">이성준 개인 이력서 기반 및 선정 기업/기관 대상 채용 공고</p>
+
+  <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+    {% assign sorted_reports = site.reports | sort: 'date' | reverse %}
+    {% for report in sorted_reports %}
+    <a href="{{ report.url | prepend: site.baseurl }}" style="text-decoration: none;">
+      <div style="background: white; padding: 1.1rem 1.4rem; border-radius: 8px; border: 1px solid #e9ecef; display: flex; justify-content: space-between; align-items: center; transition: box-shadow 0.15s;"
+           onmouseover="this.style.boxShadow='0 2px 10px rgba(0,0,0,0.08)'"
+           onmouseout="this.style.boxShadow='none'">
+        <span style="font-weight: 500; color: #222;">{{ report.title }}</span>
+        <span style="font-size: 0.85rem; color: #adb5bd; white-space: nowrap; margin-left: 1rem;">{{ report.date | date: "%Y.%m.%d" }}</span>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</div>
